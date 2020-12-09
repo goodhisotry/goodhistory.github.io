@@ -1,30 +1,71 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PWA Sample</title>
-<link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="style.css">
-<script src="app.js"></script>
-</head>
-<body>
-<div id="main">
-  <button type="button" id="hello">こんにちは！</button>
-  <button type="button" id="bye">Bye</button>
-  <div id="message"></div>
-  <button type="button" id="exit">Exit</button>
-</div>
-<script>
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://localhost/ams/index.php -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="manifest" href="manifest.json">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="ams勤怠管理">
+		<link rel="apple-touch-icon" href="image/icon-192.png">
+		<title>勤怠管理Webシステム</title>
+		<link rel="stylesheet" type="text/css" href="index_files/style.css">
+		<script src="./index_files/javascript.js.ダウンロード"></script>
+		<script language="javascript" type="text/javascript">
+			function check_data() {
+				var ret = true;
+				var divErrorMessage = document.getElementById("divErrorMessage");
+				divErrorMessage.innerHTML = '';
+				return ret;
+			}
+		</script>
+	</head>
+	<body>
+	<form name="loginForm" method="post" action="http://localhost/ams/authenticate/login.php" enctype="multipart/form-data" onsubmit="return check_data()">
+			<div class="width-100 margin-top-30">
+				<div class="row max-width center">
+					<div class="pc-12-div tb-12-div sm-20-div pc-font-size-24 tb-font-size-24 sm-font-size-24 margin-bottom-20">
+						<b>ログイン</b>
+					</div>
+					<div class="pc-12-div tb-12-div sm-20-div pc-font-size-16 tb-font-size-16 sm-font-size-16 margin-bottom-20" id="divErrorMessage"></div>
+					<div class="pc-12-div tb-12-div sm-20-div pc-font-size-12 tb-font-size-12 sm-font-size-12 margin-bottom-10 boxContainer">
+						<div class="width-20">
+						メールアドレス
+						</div>
+						<div class="width-80">
+							<input style="padding: 5px 10px; border-radius: 5px;" class="width-100" type="email" id="userId" name="userId" maxlength="254" value="" required="">
+						</div>
+					</div>
+					<div class="pc-12-div tb-12-div sm-20-div pc-font-size-12 tb-font-size-12 sm-font-size-12 margin-bottom-10 boxContainer">
+						<div class="width-20">
+							パスワード
+						</div>
+						<div class="width-80">
+							<input style="padding: 5px 10px; border-radius: 5px;" class="width-100" type="password" pattern="^[0-9A-Za-z -~]+$" id="password" name="password" maxlength="256" value="" required="">
+						</div>
+					</div>
+					<div class="pc-12-div tb-12-div sm-20-div pc-font-size-12 tb-font-size-12 sm-font-size-12 boxContainer">
+						<div class="width-20"></div>
+						<div class="width-80">
+							<input style="background-color: #1abc9c; color: #ffffff; border: 0px; padding: 10px 20px; border-radius: 5px;" type="submit" id="submit" name="submit" value="ログイン">
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type="hidden" name="redirect" value="">
+			<input type="hidden" name="message" value="">
+		</form>
+				<script>
 if ('serviceWorker' in navigator) {
     window.addEventListener("load", function() {
-        navigator.serviceWorker.register('sw.js')
-	.then(registration => {
-		registration.onupdatefound = function(){
-			registration.update();
-		}
+        navigator.serviceWorker.register('sw.js');
     });
 }
-</script>
-</body>
-</html>
+		</script>
+	
+
+
+
+
+</body></html>
