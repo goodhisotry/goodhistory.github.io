@@ -1,0 +1,49 @@
+function dispError(id, msg, focus) {
+	var obj = document.getElementById(id);
+	var newElement = document.createElement("p"); 
+	var newContent = document.createTextNode(msg); 
+	newElement.appendChild(newContent); 						
+	newElement.setAttribute("style","color:#ff0000;"); 
+	var divErrorMessage = document.getElementById("divErrorMessage");
+	divErrorMessage.insertBefore(newElement, divErrorMessage.firstChild);
+	if(focus)
+		obj.focus();
+	obj.style.backgroundColor = 'pink';
+}
+
+function dispErrorMessage(msg) {
+	var newElement = document.createElement("p"); 
+	var newContent = document.createTextNode(msg); 
+	newElement.appendChild(newContent); 						
+	newElement.setAttribute("style","color:#ff0000;"); 
+	var divErrorMessage = document.getElementById("divErrorMessage");
+	divErrorMessage.insertBefore(newElement, divErrorMessage.firstChild);
+}
+
+function clearValue(id){
+	var obj = document.getElementById(id);
+	obj.value = "";
+}
+
+function changeVisible(id, visible){
+	var obj = document.getElementById(id);
+	if(visible){
+		obj.style.display ="inline";
+	}else{
+		obj.style.display ="none";
+	}
+}
+
+function changeReadOnly(id, readonly){
+	var obj = document.getElementById(id);
+  	obj.readOnly = readonly;  
+}
+
+function dispMessasgeDelete(){
+	if(confirm('削除してよろしいですか？')){ // 確認ダイアログを表示
+		return true; // 「OK」時は送信を実行
+	}
+	else{ // 「キャンセル」時の処理
+		return false; // 送信を中止
+	}
+}
