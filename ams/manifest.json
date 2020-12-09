@@ -1,0 +1,16 @@
+{
+    "name": "ノート・台帳",
+    "short_name": "ノート・台帳",
+    "description": "ウィルのすべて",
+    "icons": [
+        {
+            "src": "https://goodhisotry.github.io/goodhistory.github.io/ams/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "https://goodhisotry.github.io/goodhistory.github.io/ams/index.html",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#000000"
+}
