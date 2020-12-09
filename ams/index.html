@@ -57,13 +57,11 @@
 			<input type="hidden" name="message" value="">
 		</form>
 				<script>
-		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register('https://goodhisotry.github.io/goodhistory.github.io/ams/sw.js').then(function(registration) {
-				// Nothing (登録成功)
-			}).catch(function(err) {
-				// Nothing (登録失敗)
-			});
-		}
+if ('serviceWorker' in navigator) {
+    window.addEventListener("load", function() {
+        navigator.serviceWorker.register('sw.js');
+    });
+}
 		</script>
 	
 
